@@ -1,7 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import paystacklogo from "../../assets/paystack.png";
+import PaystackPop from "@paystack/inline-js";
 
 const Donation = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [amount, setAmount] = useState("");
+
+  // function to process payment
+  const handlePayment = (e) => {
+    e.preventDefault();
+
+    const paystack = new PaystackPop();
+    paystack.newTransaction({
+      key: "pk_test_caf651a9be19d6c43831fc848bc81aa2714783cf",
+      amount: amount * 100,
+      email: email,
+
+      onSuccess(transcation) {
+        let message = `Payment Complete!! Reference ${transcation.reference}`;
+        alert(message);
+        setEmail("");
+      },
+
+      onCancel() {
+        alert("You are about to cancel the transaction!!!");
+      },
+    });
+  };
+
   return (
     <section className="secTwo">
       <div className="genLayout donationWrapper">
@@ -30,18 +58,35 @@ const Donation = () => {
           <form>
             <div className="inputWrapper">
               <div className="inputCont">
-                <label>first name</label>
-                <input type="text" />
+                <label htmlFor="first-name">first name</label>
+                <input
+                  type="text"
+                  id="first-name"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                />
               </div>
               <div className="inputCont">
-                <label>last name</label>
-                <input type="text" />
+                <label htmlFor="last-name">last name:</label>
+                <input
+                  type="text"
+                  id="last-name"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                />
               </div>
             </div>
             <div className="inputWrapper">
               <div className="inputCont">
-                <label>email</label>
-                <input type="text" placeholder="email@gmail.com" required />
+                <label htmlFor="email">email</label>
+                <input
+                  type="text"
+                  placeholder="email@gmail.com"
+                  required
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </div>
               <div className="inputCont">
                 <label>mobile phone</label>
@@ -49,20 +94,17 @@ const Donation = () => {
               </div>
             </div>
             <div className="inputCont">
-              <label>amount</label>
-              <input type="text" required />
+              <label htmlFor="amount">amount:</label>
+              <input
+                type="number"
+                id="amount"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+                required
+              />
             </div>
 
-            {/* <div className="formBtnGroup">
-              <button className="formBtn">
-                pay with bank
-              </button>
-              <button className="formBtn">
-                <img src={paystacklogo} alt="pay stack" />
-              </button>
-            </div> */}
-
-            <button className="formBtn">
+            <button className="formBtn" onClick={handlePayment} type="submit">
               <img src={paystacklogo} alt="pay stack" />
             </button>
           </form>
