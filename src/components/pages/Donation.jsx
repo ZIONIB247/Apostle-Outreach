@@ -14,7 +14,7 @@ const Donation = () => {
 
     const paystack = new PaystackPop();
     paystack.newTransaction({
-      key: "pk_test_caf651a9be19d6c43831fc848bc81aa2714783cf",
+      key: "pk_test_bb08d1a4b51017fdccc1a4efcc58823064d9fc6a",
       amount: amount * 100,
       email: email,
 
