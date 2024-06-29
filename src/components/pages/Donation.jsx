@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import paystacklogo from "../../assets/paystack.png";
 import PaystackPop from "@paystack/inline-js";
 
+
 const Donation = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -14,7 +15,7 @@ const Donation = () => {
 
     const paystack = new PaystackPop();
     paystack.newTransaction({
-      key: "pk_test_bb08d1a4b51017fdccc1a4efcc58823064d9fc6a",
+      key: import.meta.env.VITE_APP_API_KEY,
       amount: amount * 100,
       email: email,
 
@@ -22,6 +23,10 @@ const Donation = () => {
         let message = `Payment Complete!! Reference ${transcation.reference}`;
         alert(message);
         setEmail("");
+        setFirstName("");
+        setLastName("");
+        setAmount("");
+        
       },
 
       onCancel() {
@@ -29,6 +34,7 @@ const Donation = () => {
       },
     });
   };
+
 
   return (
     <section className="secTwo">

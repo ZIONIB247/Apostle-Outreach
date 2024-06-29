@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles.css";
 import logoo from "../../assets/logoo.png";
 import { FaPhone } from "react-icons/fa6";
 import { TiSocialFacebook } from "react-icons/ti";
