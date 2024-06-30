@@ -55,7 +55,7 @@ const Donation = () => {
           </p>
 
           <span>
-            phone: <a href="#">+2348087681372</a>
+            phone: <a href="#">08033572529</a>
           </span>
         </div>
 

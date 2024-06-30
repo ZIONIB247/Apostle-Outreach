@@ -18,7 +18,7 @@ const Footer = () => {
             </div>
             <div className="phone">
               <FaPhone style={{ fontSize: "20px", color: "white" }} />
-              <p>08087681372</p>
+              <p>08033572529</p>
             </div>
             <div className="footerIcon">
               <span>
