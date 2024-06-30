@@ -44,7 +44,7 @@ const Donation = () => {
 
           <p>
             Our Donor Care team is available to answer any general inquiries
-            about Covenant House programs, policies, donations, and our
+            about Apostle Chidi Alagwu Outreach programs, policies, donations, and our
             fundraising work.
           </p>
           <br />
@@ -55,7 +55,7 @@ const Donation = () => {
           </p>
 
           <span>
-            phone: <a href="#">1-800-388-3888</a>
+            phone: <a href="#">+2348087681372</a>
           </span>
         </div>
 

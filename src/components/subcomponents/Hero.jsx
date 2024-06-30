@@ -25,7 +25,7 @@ const Hero = () => {
             <p>
               Today's unsustainable cost of living is forcing more youth into
               homelessness – at a time when fewer beds are available. This makes
-              the care Covenant House provides more important than ever, and we
+              Apostle Chidi Alagwu Outreach provides more important than ever, and we
               need your help right now to keep our doors open 24/7.
             </p> <br />
 

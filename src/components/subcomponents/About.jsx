@@ -7,10 +7,11 @@ const About = () => {
         <h1><span>abo</span>ut Us</h1>
 
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-          voluptatum officia cumque esse! Nulla cum sapiente perspiciatis ex
-          repellat fuga repudiandae debitis sed excepturi? Repudiandae quidem
-          voluptate fuga debitis libero?
+         our aim as a foundation is to preach the Gospel of our lord Jesus Christ all over the 
+         world. and also to  establish a seed of love that will promote mutual understanding resulting
+         to peace and unity among men and brethren. and to assist the less privilaged in the society..
+         we also collaborate with other NGO ,organisations, associations , churches and other outreach
+         ministries having objects similar to the aims of Apostle Chidi Alagwu Outreach.  
         </p>
       </div>
     </section>
