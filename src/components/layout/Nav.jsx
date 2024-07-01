@@ -29,7 +29,7 @@ const Nav = () => {
   //   transition: "background-color 0.3s ease",
   //   background:
   //     location.pathname === "/home" && scrolled
-  //       ? "#007" 
+  //       ? "#f6f6f6" 
   //       : "linear-gradient(to right,  #fff 50%, #007 50%)",
   // };
   return (

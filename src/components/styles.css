@@ -30,7 +30,6 @@ nav {
   width: 200px;
   margin-left: -2rem;
   font-size: 15px;
-  
 }
 
 .heroBtn {
@@ -128,40 +127,72 @@ nav {
 }
 
 /* contact styling */
-.secThree{
-  margin-block: 8rem;
+.secThree {
+  margin-top: 8rem;
+  padding-block: 3rem;
+  background-color: #f6f6f6;
 }
 .contactWrapper {
   display: flex;
+  align-items: center;
 }
 
-.formContact{
+.formContact {
   flex: 1;
 }
 
-.formContact>h3{
+.formContact > h3 {
   text-transform: capitalize;
   color: #263b5c;
 }
 
-.formContact>h1{
+.formContact > h1 {
   font-size: 1.7rem;
   width: 300px;
 }
 
-.formContact>p{
+.formContact > p {
   width: 500px;
   margin-top: 2rem;
 }
 
-.formIcons{
+.formIcons {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-block: 1.5rem;
 }
 
-.formIcons>span{
+.info{
+  margin-block: 2rem;
+}
+
+.infoContent{
+  display: flex;
+  margin-bottom: 1rem;
+  gap: 1rem;
+  align-items: center;
+}
+
+.infoContent>span{
+  width: 40px;
+  height: 40px;
+  padding: .5rem;
+  background-color: #fff;
+  box-shadow: .1rem .1rem #000;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social>h5{
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  margin-bottom: -1rem;
+}
+
+.formIcons > span {
   color: #fff;
   display: flex;
   justify-content: center;
@@ -171,55 +202,75 @@ nav {
   border-radius: 100%;
 }
 
-.formIcons>span:nth-child(1){
+.formIcons > span:nth-child(1) {
   background-color: #000;
 }
 
-.formIcons>span:nth-child(2){
+.formIcons > span:nth-child(2) {
   background-color: #5366c2;
 }
 
-.formIcons>span:nth-child(3){
+.formIcons > span:nth-child(3) {
   background-color: #fcad30;
 }
 
-.formIcons>span:nth-child(4){
+.formIcons > span:nth-child(4) {
   background-color: #4ecd99;
 }
 
-.contactForm{
+.contactForm {
   flex: 1;
+  margin-top: 1.5rem;
 }
 
-.formInputGroup{
+.formInputGroup {
   margin-bottom: 1.5rem;
   display: flex;
-  gap: 10px;
+  gap: 25px;
 }
 
-.formInput{
+.formInput {
   width: 100%;
   border-bottom: 2px solid grey;
 }
 
-.formInput>input, .formInput>select {
+.formInput > input,
+.formInput > select {
   border: none;
   outline: none;
   width: 100%;
-  padding-block: .6rem;
+  padding-block: 0.6rem;
+  background-color: transparent;
 }
 
-.textField{
+.textField {
   height: 20vh;
   width: 100%;
   border-bottom: 2px solid;
 }
-.textField>textarea{
+.textField > textarea {
   width: 100%;
   height: 100%;
   border: none;
   outline: none;
+  background-color: transparent;
 }
+
+.btn {
+  padding: 0.5rem 2rem;
+  margin-block: 2rem;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #006ef5;
+  text-transform: capitalize;
+}
+.btn:hover{
+  background-color: #007;
+  cursor: pointer;
+}
+
 /* Donation styling*/
 .secTwo {
   padding-block: 8rem;
@@ -273,14 +324,10 @@ nav {
 .inputCont > input::placeholder {
   opacity: 0.4;
 }
-/* .formBtnGroup {
-  display: flex;
-  gap: 10px;
-} */
+
 .formBtn {
   width: 150px;
   height: 40px;
-  /* padding: 0.4rem 1rem; */
   text-transform: capitalize;
   font-weight: 600;
   color: #fff;
@@ -328,7 +375,6 @@ nav {
 }
 
 .footCard {
-  /* border: 2px solid #fff; */
   width: 50%;
   padding-inline: 2rem;
 }
@@ -374,9 +420,10 @@ nav {
   gap: 10px;
 }
 .footerIcon > span {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 100%;
+  padding: .6rem .4rem;
   border: 1px solid #fff;
   display: flex;
   justify-content: center;
@@ -407,6 +454,8 @@ nav {
 }
 .bottomFoot {
   display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 .buttomCont > p {
   margin-top: 25px;

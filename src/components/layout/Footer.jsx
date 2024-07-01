@@ -20,22 +20,6 @@ const Footer = () => {
               <FaPhone style={{ fontSize: "20px", color: "white" }} />
               <p>08087681372</p>
             </div>
-            <div className="footerIcon">
-              <span>
-                <TiSocialFacebook
-                  style={{ fontSize: "20px", color: "white" }}
-                />
-              </span>
-              <span>
-                <FaInstagram style={{ fontSize: "20px ", color: "white" }} />
-              </span>
-              <span>
-                <FaLinkedinIn style={{ fontSize: "20px", color: "white" }} />
-              </span>
-              <span>
-                <FaXTwitter style={{ fontSize: "20px", color: "white" }} />
-              </span>
-            </div>
           </div>
           {/* second card */}
           <div className="footCard">
@@ -68,10 +52,20 @@ const Footer = () => {
               rights reserved. <span>Privacy Policy</span>{" "}
             </p>
           </div>
-          <div className="buttomIcon">
-            <img src="" alt="pix" />
-            <img src="" alt="pix" />
-            <img src="" alt="pix" />
+
+          <div className="footerIcon">
+            <span>
+              <TiSocialFacebook style={{ fontSize: "2rem", color: "white" }} />
+            </span>
+            <span>
+              <FaInstagram style={{ fontSize: "1.3rem ", color: "white" }} />
+            </span>
+            <span>
+              <FaLinkedinIn style={{ fontSize: "1.3rem", color: "white" }} />
+            </span>
+            <span>
+              <FaXTwitter style={{ fontSize: "1.3rem", color: "white" }} />
+            </span>
           </div>
         </div>
       </div>

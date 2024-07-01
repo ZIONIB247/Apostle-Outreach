@@ -1,6 +1,6 @@
 import React from 'react'
 import About from '../subcomponents/About'
-import Contact from './Contact'
+import Contact from '../subcomponents/Contact'
 
 const Home = () => {
   return (

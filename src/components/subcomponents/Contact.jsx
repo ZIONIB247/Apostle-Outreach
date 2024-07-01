@@ -4,7 +4,11 @@ import {
   FaFacebookF,
   FaPinterestP,
   FaInstagram,
+  FaPhone,
 } from "react-icons/fa";
+
+import { GrLocation } from "react-icons/gr";
+import { FiMail } from "react-icons/fi";
 
 const Contact = () => {
   return (
@@ -15,25 +19,43 @@ const Contact = () => {
 
           <h1>Feel free to write to us a message.</h1>
 
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam quas
-            nesciunt velit repellendus soluta autem laudantium provident facere,
-            itaque enim eaque adipisci esse rerum vitae?
-          </p>
+          <div className="info">
+            <div className="infoContent">
+              <span>
+                <GrLocation style={{ opacity: 0.6 }} />
+              </span>
+              <h4>address</h4>
+            </div>
+            <div className="infoContent">
+              <span>
+                <FiMail style={{ opacity: 0.6 }} />
+              </span>
+              <h4>email</h4>
+            </div>
+            <div className="infoContent">
+              <span>
+                <FaPhone style={{ opacity: 0.6 }} />
+              </span>
+              <h4>number</h4>
+            </div>
+          </div>
 
-          <div className="formIcons">
-            <span>
-              <FaTwitter />
-            </span>
-            <span>
-              <FaFacebookF />
-            </span>
-            <span>
-              <FaPinterestP />
-            </span>
-            <span>
-              <FaInstagram />
-            </span>
+          <div className="social">
+            <h5>stay connected</h5>
+            <div className="formIcons">
+              <span>
+                <FaTwitter />
+              </span>
+              <span>
+                <FaFacebookF />
+              </span>
+              <span>
+                <FaPinterestP />
+              </span>
+              <span>
+                <FaInstagram />
+              </span>
+            </div>
           </div>
         </div>
 
@@ -63,6 +85,8 @@ const Contact = () => {
           <div className="textField">
             <textarea placeholder="Enter Message"></textarea>
           </div>
+
+          <button className="btn">submit</button>
         </form>
       </div>
     </section>
