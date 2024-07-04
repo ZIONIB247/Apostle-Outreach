@@ -24,7 +24,7 @@ const Contact = () => {
               <span>
                 <GrLocation style={{ opacity: 0.6 }} />
               </span>
-              <h4>address</h4>
+              <h4>NO 16, Hill Crescent,Karu,Abuja,Nigeria</h4>
             </div>
             <div className="infoContent">
               <span>
@@ -36,7 +36,7 @@ const Contact = () => {
               <span>
                 <FaPhone style={{ opacity: 0.6 }} />
               </span>
-              <h4>number</h4>
+              <h4>08033572529</h4>
             </div>
           </div>
 
