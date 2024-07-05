@@ -58,7 +58,7 @@ const Footer = () => {
               <TiSocialFacebook style={{ fontSize: "2rem", color: "white" }} />
             </span>
             <span>
-              <FaInstagram style={{ fontSize: "1.3rem ", color: "white" }} />
+              <FaInstagram style={{ fontSize: "1.3rem ", color: "white" }}  href="https://www.instagram.com/apostlechidialagwu?igsh=NzcwN3J1cHpweWY4&utm_source=qr"/>
             </span>
             <span>
               <FaLinkedinIn style={{ fontSize: "1.3rem", color: "white" }} />
