@@ -8,6 +8,12 @@
   font-family: "Kaisei HarunoUmi", serif;
 }
 
+main{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .genLayout{
   max-width: 1100px;
   margin: auto;

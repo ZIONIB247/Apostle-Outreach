@@ -3,7 +3,7 @@ nav {
   z-index: 1;
   background: linear-gradient(90deg, #fff 50%, #007 50%);
   width: 100%;
-  padding-block: 2rem;
+  padding-block: 1rem;
 }
 
 .innerNav {
@@ -39,6 +39,34 @@ nav {
   text-transform: uppercase;
   color: #fff;
   font-size: 14px;
+}
+
+/* responsive code for Nav bar */
+@media (min-width: 320px) and (max-width: 460px) {
+  nav {
+    padding-block: 0.6rem;
+    background: #007;
+  }
+
+  .logoSide {
+    gap: 1.3rem;
+  }
+
+  .logoSide > img {
+    width: 70px;
+  }
+
+  .logoSide > h2 {
+    font-size: 10px;
+    width: 100px;
+    color: #fff;
+  }
+
+  .heroBtn {
+    padding: 0.3rem 0.8rem;
+    font-size: 12px;
+    margin-right: 0.5rem;
+  }
 }
 
 /* styling for hero section */
@@ -103,6 +131,45 @@ nav {
   color: #fff;
 }
 
+@media (min-width: 320px) and (max-width: 460px) {
+  .secOne {
+    background: #f6f6f6;
+    padding-block: 3rem;
+    margin-bottom: 28rem;
+  }
+
+  .heroWrapper {
+    gap: 2rem;
+    flex-direction: column;
+    width: calc(100% - 30px);
+  }
+
+  .leftSide > h1 {
+    width: 100%;
+  }
+
+  .leftSide > p {
+    width: 100%;
+    text-align: justify;
+  }
+
+  .leftSide > h5 {
+    margin-top: 1rem;
+  }
+
+  .bgImg {
+    height: 30vh;
+  }
+
+  .bgImg > img {
+    transform: rotate(0deg);
+  }
+
+  .bgContent > p {
+    color: #000;
+  }
+}
+
 /* About styling */
 .aboutWrapper {
   padding-block: 3rem;
@@ -124,6 +191,20 @@ nav {
   width: 800px;
   margin: 1rem auto;
   text-align: center;
+}
+
+/* responsiveness styling for about section */
+@media (min-width: 320px) and (max-width: 460px) {
+  .aboutWrapper > h1 {
+    font-size: 2rem;
+  }
+
+  .aboutWrapper > p {
+    width: calc(100% - 30px);
+    font-size: 1.1rem;
+    text-align: justify;
+  }
+
 }
 
 /* contact styling */
@@ -163,30 +244,30 @@ nav {
   margin-block: 1.5rem;
 }
 
-.info{
+.info {
   margin-block: 2rem;
 }
 
-.infoContent{
+.infoContent {
   display: flex;
   margin-bottom: 1rem;
   gap: 1rem;
   align-items: center;
 }
 
-.infoContent>span{
+.infoContent > span {
   width: 40px;
   height: 40px;
-  padding: .5rem;
+  padding: 0.5rem;
   background-color: #fff;
-  box-shadow: .1rem .1rem #000;
+  box-shadow: 0.1rem 0.1rem #000;
   border-radius: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.social>h5{
+.social > h5 {
   text-transform: capitalize;
   font-size: 1.2rem;
   margin-bottom: -1rem;
@@ -266,9 +347,29 @@ nav {
   background-color: #006ef5;
   text-transform: capitalize;
 }
-.btn:hover{
+.btn:hover {
   background-color: #007;
   cursor: pointer;
+}
+
+/* responsive code for contact form */
+@media (min-width: 320px) and (max-width: 460px) {
+  .contactWrapper {
+    /* border: 2px solid red; */
+    width: calc(100% - 30px);
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contactForm {
+    width: 100%;
+  }
+
+  .formInputGroup {
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 2.5rem;
+  }
 }
 
 /* Donation styling*/
@@ -347,6 +448,23 @@ nav {
   object-fit: cover;
 }
 
+/* responsive code for Donation */
+@media (min-width: 320px) and (max-width: 460px) {
+  .donationWrapper{
+    width: calc(100% - 30px);
+    flex-direction: column;
+  }
+
+  .donationForm > h2{
+    margin-bottom: 1rem;
+  }
+
+  .inputWrapper {
+    flex-direction: column;
+  }
+}
+
+
 /* this is the footer styling */
 
 .footerWrapper {
@@ -397,18 +515,12 @@ nav {
   text-transform: capitalize;
 }
 
-.card > h2 {
-  color: #fff;
-  margin-left: 20px;
-  text-transform: uppercase;
-  font-size: 15px;
-}
-
 .phone {
+  width: 250px;
+  margin: 1rem auto;
   display: flex;
-  gap: 5px;
-  margin-top: 25px;
-  margin-left: 14px;
+  align-items: center;
+  gap: 2rem;
   font-size: 20px;
 }
 .phone > p {
@@ -423,34 +535,47 @@ nav {
   width: 30px;
   height: 30px;
   border-radius: 100%;
-  padding: .6rem .4rem;
+  padding: 0.6rem 0.4rem;
   border: 1px solid #fff;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* .footerIcon > span:hover {
+  background-color: #fff;
+  border: none;
+  color: #007;
+} */
+
 .footCard > h2 {
   text-transform: capitalize;
   color: #fff;
 }
 .footCard > p {
+  margin-block: 1rem;
   font-size: 15px;
   color: #fff;
   text-transform: capitalize;
 }
 .search {
-  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 .search > input {
+  width: 70%;
   padding: 10px;
   border: none;
+  outline: none;
+  border-radius: 5px;
 }
 .search > button {
-  padding: 10px;
+  border-radius: 5px;
+  padding: 10px 15px;
   text-transform: uppercase;
   background-color: yellow;
   border: none;
+  font-weight: 600;
 }
 .bottomFoot {
   display: flex;
@@ -461,4 +586,38 @@ nav {
   margin-top: 25px;
   color: #fff;
   font-size: 16px;
+}
+
+@media (min-width: 320px) and (max-width: 460px) {
+  .footGrid {
+    flex-direction: column;
+    padding-inline: 2rem;
+    gap: 2rem;
+  }
+
+  .footCard {
+    width: 100%;
+    padding: 0;
+  }
+
+  .footerLogo{
+    margin-left: -2rem;
+  }
+
+  .phone{
+    width: 300px;
+  }
+
+  .footCard:nth-child(2) {
+    padding-block: 1rem;
+    border-right: none;
+    border-left: none;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+  }
+
+  .bottomFoot{
+    flex-direction: column;
+    padding-inline: 2rem;
+  }
 }
