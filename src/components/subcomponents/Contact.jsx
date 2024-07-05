@@ -30,7 +30,7 @@ const Contact = () => {
               <span>
                 <FiMail style={{ opacity: 0.6 }} />
               </span>
-              <h4>email</h4>
+              <h4>aplostlechidialagwuoutreach@gmail.com</h4>
             </div>
             <div className="infoContent">
               <span>
