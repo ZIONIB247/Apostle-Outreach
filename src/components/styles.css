@@ -1,3 +1,4 @@
+
 nav {
   position: fixed;
   z-index: 1;
@@ -204,7 +205,6 @@ nav {
     font-size: 1.1rem;
     text-align: justify;
   }
-
 }
 
 /* contact styling */
@@ -273,7 +273,8 @@ nav {
   margin-bottom: -1rem;
 }
 
-.formIcons > span {
+.formIcons > a {
+  text-decoration: none;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -283,19 +284,19 @@ nav {
   border-radius: 100%;
 }
 
-.formIcons > span:nth-child(1) {
+.formIcons > a:nth-child(1) {
   background-color: #000;
 }
 
-.formIcons > span:nth-child(2) {
+.formIcons > a:nth-child(2) {
   background-color: #5366c2;
 }
 
-.formIcons > span:nth-child(3) {
+.formIcons > a:nth-child(3) {
   background-color: #fcad30;
 }
 
-.formIcons > span:nth-child(4) {
+.formIcons > a:nth-child(4) {
   background-color: #4ecd99;
 }
 
@@ -425,6 +426,12 @@ nav {
 .inputCont > input::placeholder {
   opacity: 0.4;
 }
+.btnPaymentGroup {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .formBtn {
   width: 150px;
@@ -434,11 +441,10 @@ nav {
   color: #fff;
   border: none;
   font-size: 12px;
-  background-color: #fff;
   border: 2px solid #228ae6;
 }
 .formBtn > img:hover {
-  cursor: pointer;
+  /* cursor: pointer; */
   box-shadow: 0.2rem 0.2rem 5px #228ae6;
 }
 
@@ -448,22 +454,36 @@ nav {
   object-fit: cover;
 }
 
+.paymentSelection {
+  margin-block: .7rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+form>p{
+  font-weight: 600;
+}
+
 /* responsive code for Donation */
 @media (min-width: 320px) and (max-width: 460px) {
-  .donationWrapper{
+  .donationWrapper {
     width: calc(100% - 30px);
     flex-direction: column;
   }
 
-  .donationForm > h2{
+  .donationForm > h2 {
     margin-bottom: 1rem;
   }
 
   .inputWrapper {
     flex-direction: column;
   }
-}
 
+  .btnPaymentGroup{
+    /* border: 2px solid; */
+    width: 90%;
+  }
+}
 
 /* this is the footer styling */
 
@@ -600,11 +620,11 @@ nav {
     padding: 0;
   }
 
-  .footerLogo{
+  .footerLogo {
     margin-left: -2rem;
   }
 
-  .phone{
+  .phone {
     width: 300px;
   }
 
@@ -616,7 +636,7 @@ nav {
     border-bottom: 1px solid #fff;
   }
 
-  .bottomFoot{
+  .bottomFoot {
     flex-direction: column;
     padding-inline: 2rem;
   }

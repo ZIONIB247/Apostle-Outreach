@@ -9,6 +9,7 @@ import {
 
 import { GrLocation } from "react-icons/gr";
 import { FiMail } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   return (
@@ -43,18 +44,18 @@ const Contact = () => {
           <div className="social">
             <h5>stay connected</h5>
             <div className="formIcons">
-              <span>
+              <Link to="">
                 <FaTwitter />
-              </span>
-              <span>
+              </Link>
+              <Link to="">
                 <FaFacebookF />
-              </span>
-              <span>
+              </Link>
+              <Link to="">
                 <FaPinterestP />
-              </span>
-              <span>
+              </Link>
+              <Link to="">
                 <FaInstagram />
-              </span>
+              </Link>
             </div>
           </div>
         </div>
