@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import paystacklogo from "../../assets/paystack.png";
+import flutterwavelogo from "../../assets/flutterwave.png";
 import PaystackPop from "@paystack/inline-js";
-
 
 const Donation = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [amount, setAmount] = useState("");
+  const [selectedOption, setSelectedOption] = useState("");
 
-  // function to process payment
+  // Function to handle radio button changes
+  const handleRadioChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+
+  // function to process payment with paystack
   const handlePayment = (e) => {
     e.preventDefault();
 
@@ -26,7 +32,6 @@ const Donation = () => {
         setFirstName("");
         setLastName("");
         setAmount("");
-        
       },
 
       onCancel() {
@@ -35,6 +40,10 @@ const Donation = () => {
     });
   };
 
+  // function to process payment with flutterwave
+  const handleFlutterPayment = (event) => {
+    event.preventDefault();
+  };
 
   return (
     <section className="secTwo">
@@ -110,9 +119,79 @@ const Donation = () => {
               />
             </div>
 
-            <button className="formBtn" onClick={handlePayment} type="submit">
-              <img src={paystacklogo} alt="pay stack" />
-            </button>
+            <p>Select a method of payment:</p>
+
+            <div className="paymentSelection">
+              <label>
+                <input
+                  type="radio"
+                  value="optionPayStack"
+                  checked={selectedOption === "optionPayStack"}
+                  onChange={handleRadioChange}
+                />
+                PayStack
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  value="optionFlutterWave"
+                  checked={selectedOption === "optionFlutterWave"}
+                  onChange={handleRadioChange}
+                />
+                Flutter Wave
+              </label>
+            </div>
+
+            <div className="btnPaymentGroup">
+              {/* button one  */}
+              <button
+                className="formBtn"
+                onClick={handlePayment}
+                type="submit"
+                style={{
+                  backgroundColor:
+                    selectedOption === "optionPayStack" ? "#fff" : "gray",
+                  cursor:
+                    selectedOption === "optionPayStack"
+                      ? "pointer"
+                      : "not-allowed",
+                }}
+                disabled={selectedOption !== "optionPayStack"}
+              >
+                {selectedOption === "optionPayStack" ? (
+                  <img src={paystacklogo} alt="pay stack" />
+                ) : (
+                  "paystack"
+                )}
+              </button>
+
+              {/* button two  */}
+              <button
+                className="formBtn"
+                type="submit"
+                style={{
+                  backgroundColor:
+                    selectedOption === "optionFlutterWave" ? "#fff" : "gray",
+                  // boxShadow:
+                  //   selectedOption === "optionFlutterWave"
+                  //     ? "0.2rem 0.2rem 5px #228ae6"
+                  //     : "none",
+                  cursor:
+                    selectedOption === "optionFlutterWave"
+                      ? "pointer"
+                      : "not-allowed",
+                }}
+                disabled={selectedOption !== "optionFlutterWave"}
+                onClick={handleFlutterPayment}
+              >
+                {selectedOption === "optionFlutterWave" ? (
+                  <img src={flutterwavelogo} alt="flutter" />
+                ) : (
+                  "flutterwave"
+                )}
+              </button>
+            </div>
           </form>
         </div>
       </div>

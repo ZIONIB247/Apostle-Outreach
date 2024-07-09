@@ -36,7 +36,7 @@ const Nav = () => {
     // <nav style={gradientStyle} $isScroll={scrolled}>
     <nav>
       <div className="genLayout innerNav">
-        <Link className="logoSide" to="/home">
+        <Link className="logoSide" to="/">
           <img src={logoo} alt="logo" />
           <h2>Apostle Chidi Alagwu Outreach</h2>
         </Link>

@@ -10,7 +10,7 @@ const Header = () => {
     <header>
       <Nav />
       
-      {location.pathname === "/home" ? (
+      {location.pathname === "/" ? (
        <Hero />
       ) : (
         <h1 className="headPathName">
