@@ -53,7 +53,7 @@ const Contact = () => {
               <Link to="">
                 <FaPinterestP />
               </Link>
-              <Link to="">
+              <Link to="https://www.instagram.com/apostlechidialagwu?igsh=NzcwN3J1cHpweWY4&utm_source=qr">
                 <FaInstagram />
               </Link>
             </div>

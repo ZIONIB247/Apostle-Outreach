@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import paystacklogo from "../../assets/paystack.png";
-import flutterwavelogo from "../../assets/flutterwave.png";
+import flutterwavelogo from "../../assets/fluuterwave.jpg";
 import PaystackPop from "@paystack/inline-js";
+import { useFlutterwave } from "flutterwave-react-v3";
+// import { FlutterPayment } from "../payment/FlutterPayment";
+import logo from "../../assets/logoo.png"
 
 const Donation = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [number, setNumber] = useState("");
   const [email, setEmail] = useState("");
   const [amount, setAmount] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
@@ -41,9 +45,47 @@ const Donation = () => {
   };
 
   // function to process payment with flutterwave
-  const handleFlutterPayment = (event) => {
-    event.preventDefault();
+  // const handleFlutterPayment = (event) => {
+  //   event.preventDefault();
+
+  //   const config = {
+  //     public_key: 'YOUR_PUBLIC_KEY', // Replace with your public key
+  //     tx_ref: Date.now(),
+  //     amount: amount,
+  //     currency: 'USD',
+  //     payment_options: 'card,mobilemoney,ussd',
+  //     customer: {
+  //       email: email,
+  //       phonenumber: '070********',
+  //       name: `${firstName} ${lastName}`,
+  //     },
+  //     customizations: {
+  //       title: 'My store',
+  //       description: 'Payment for items in cart',
+  //       logo: 'https://example.com/logo.png',
+  //     },
+  //   };
+
+  // };
+  const config = {
+    public_key: import.meta.env.VITE_APP_FLUTTERAPI_KEY,
+    tx_ref: Date.now(),
+    amount: amount,
+    currency: "USD",
+    payment_options: "card,mobilemoney,ussd",
+    customer: {
+      email: email,
+      phonenumber: number,
+      name: `${firstName} ${lastName}`,
+      name: firstName,
+    },
+    customizations: {
+      title: "Apostle Chidi Alagwu Outreach",
+      description: "A nonprofit organization, aims at reaching lives" ,
+      logo: logo,
+    },
   };
+  const handleFlutterPayment = useFlutterwave(config);
 
   return (
     <section className="secTwo">
@@ -104,8 +146,14 @@ const Donation = () => {
                 />
               </div>
               <div className="inputCont">
-                <label>mobile phone</label>
-                <input type="text" />
+                <label htmlFor="number">mobile phone</label>
+                <input
+                  type="number"
+                  required
+                  id="number"
+                  value={number}
+                  onChange={(e) => setNumber(e.target.value)}
+                />
               </div>
             </div>
             <div className="inputCont">
@@ -183,7 +231,17 @@ const Donation = () => {
                       : "not-allowed",
                 }}
                 disabled={selectedOption !== "optionFlutterWave"}
-                onClick={handleFlutterPayment}
+                // onClick={handleFlutterPayment}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleFlutterPayment({
+                    callback: (response) => {
+                      console.log(response);
+                      // closePaymentModal(); // this will close the modal programmatically
+                    },
+                    onClose: () => {},
+                  });
+                }}
               >
                 {selectedOption === "optionFlutterWave" ? (
                   <img src={flutterwavelogo} alt="flutter" />
@@ -191,11 +249,17 @@ const Donation = () => {
                   "flutterwave"
                 )}
               </button>
+
+             
             </div>
           </form>
+
+         
         </div>
       </div>
+      {/* <FlutterPayment /> */}
     </section>
+    
   );
 };
 
