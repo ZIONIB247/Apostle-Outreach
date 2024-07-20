@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import paystacklogo from "../../assets/paystack.png";
-import flutterwavelogo from "../../assets/flutterwave.png";
+import flutterwavelogo from "../../assets/fluuterwave.jpg";
 import PaystackPop from "@paystack/inline-js";
 import { useFlutterwave } from "flutterwave-react-v3";
-import { FlutterPayment } from "../payment/FlutterPayment";
+// import { FlutterPayment } from "../payment/FlutterPayment";
+import logo from "../../assets/logoo.png"
 
 const Donation = () => {
   const [firstName, setFirstName] = useState("");
@@ -75,13 +76,13 @@ const Donation = () => {
     customer: {
       email: email,
       phonenumber: number,
-      // name: `${firstName} ${lastName}`,
+      name: `${firstName} ${lastName}`,
       name: firstName,
     },
     customizations: {
-      title: "My store",
-      description: "Payment for items in cart",
-      logo: "https://example.com/logo.png",
+      title: "Apostle Chidi Alagwu Outreach",
+      description: "A nonprofit organization, aims at reaching lives" ,
+      logo: logo,
     },
   };
   const handleFlutterPayment = useFlutterwave(config);
@@ -256,7 +257,7 @@ const Donation = () => {
          
         </div>
       </div>
-      <FlutterPayment />
+      {/* <FlutterPayment /> */}
     </section>
     
   );
