@@ -45,16 +45,16 @@ const Contact = () => {
             <h5>stay connected</h5>
             <div className="formIcons">
               <Link to="">
-                <FaTwitter />
+                <FaTwitter className="fic" />
               </Link>
               <Link to="">
-                <FaFacebookF />
+                <FaFacebookF className="fic" />
               </Link>
               <Link to="">
-                <FaPinterestP />
+                <FaPinterestP className="fic" />
               </Link>
               <Link to="https://www.instagram.com/apostlechidialagwu?igsh=NzcwN3J1cHpweWY4&utm_source=qr">
-                <FaInstagram />
+                <FaInstagram className="fic" />
               </Link>
             </div>
           </div>
