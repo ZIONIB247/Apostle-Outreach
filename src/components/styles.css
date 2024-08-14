@@ -663,7 +663,7 @@ form>p{
 
 .slider {
   position: relative;
-  max-width: 1100px;
+  max-width: 850px;
   margin: 100px auto;  
   overflow: hidden;
   border-radius: 10px;
@@ -671,13 +671,13 @@ form>p{
 }
 
 .slider-content {
-  height: 45vh;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.slider-content img {
+.slider-content>img {
   height: 100%;
   width: 100%;
   border-radius: 10px;

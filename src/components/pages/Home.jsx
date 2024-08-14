@@ -1,12 +1,12 @@
 import React from 'react'
 import About from '../subcomponents/About'
 import Contact from '../subcomponents/Contact'
-import BannerSlider from '../subcomponents/BannerSlider'
+// import BannerSlider from '../subcomponents/BannerSlider'
 import Slider from '../subcomponents/Slider'
-import testOne from "../../assets/bglogo.jpg";
-import testTwo from "../../assets/homeless.webp";
-import testThree from "../../assets/plan.jpg";
-import testFour from "../../assets/build.png";
+import testOne from "../../assets/pg.jpg";
+import testTwo from "../../assets/pg2.jpg";
+import testThree from "../../assets/homeless.webp";
+import testFour from "../../assets/pg3.jpg";
 
 
 const Home = () => {
@@ -21,7 +21,7 @@ const Home = () => {
     <div>
        <About />
        <Contact />
-       <BannerSlider />
+       {/*<BannerSlider />*/}
 
        <Slider images={images} autoSlideInterval={3000} />
     </div>
