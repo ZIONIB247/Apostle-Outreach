@@ -1,10 +1,12 @@
-import React, { useState } from "react";
-import paystacklogo from "../../assets/paystack.png";
-import flutterwavelogo from "../../assets/fluuterwave.jpg";
-import PaystackPop from "@paystack/inline-js";
-import { useFlutterwave } from "flutterwave-react-v3";
+// import paystacklogo from "../../assets/paystack.png";
 // import { FlutterPayment } from "../payment/FlutterPayment";
+// import PaystackPop from "@paystack/inline-js";
+import React, { useState } from "react";
+import flutterwavelogo from "../../assets/fluuterwave.jpg";
+import { useFlutterwave } from "flutterwave-react-v3";
 import logo from "../../assets/logoo.png"
+import { useNavigate } from "react-router-dom";
+
 
 const Donation = () => {
   const [firstName, setFirstName] = useState("");
@@ -14,35 +16,38 @@ const Donation = () => {
   const [amount, setAmount] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
 
+  const navigate = useNavigate();
+
+  // name: firstName,
   // Function to handle radio button changes
   const handleRadioChange = (event) => {
     setSelectedOption(event.target.value);
   };
 
   // function to process payment with paystack
-  const handlePayment = (e) => {
-    e.preventDefault();
+  // const handlePayment = (e) => {
+  //   e.preventDefault();
 
-    const paystack = new PaystackPop();
-    paystack.newTransaction({
-      key: import.meta.env.VITE_APP_API_KEY,
-      amount: amount * 100,
-      email: email,
+  //   const paystack = new PaystackPop();
+  //   paystack.newTransaction({
+  //     key: import.meta.env.VITE_APP_API_KEY,
+  //     amount: amount * 100,
+  //     email: email,
 
-      onSuccess(transcation) {
-        let message = `Payment Complete!! Reference ${transcation.reference}`;
-        alert(message);
-        setEmail("");
-        setFirstName("");
-        setLastName("");
-        setAmount("");
-      },
+  //     onSuccess(transcation) {
+  //       let message = `Payment Complete!! Reference ${transcation.reference}`;
+  //       alert(message);
+  //       setEmail("");
+  //       setFirstName("");
+  //       setLastName("");
+  //       setAmount("");
+  //     },
 
-      onCancel() {
-        alert("You are about to cancel the transaction!!!");
-      },
-    });
-  };
+  //     onCancel() {
+  //       alert("You are about to cancel the transaction!!!");
+  //     },
+  //   });
+  // };
 
   // function to process payment with flutterwave
   // const handleFlutterPayment = (event) => {
@@ -77,7 +82,7 @@ const Donation = () => {
       email: email,
       phonenumber: number,
       name: `${firstName} ${lastName}`,
-      name: firstName,
+      
     },
     customizations: {
       title: "Apostle Chidi Alagwu Outreach",
@@ -86,6 +91,41 @@ const Donation = () => {
     },
   };
   const handleFlutterPayment = useFlutterwave(config);
+
+
+  // function to handle submit
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (!firstName || !lastName || !email || !amount) {
+      alert("All fields are required.");
+      return;
+    }
+
+    handleFlutterPayment({
+      callback: (response) => {
+        if (response.status === "successful") {
+          alert("Payment Successful!");
+        }
+
+        // Close the payment modal
+        closePaymentModal();
+      },
+      onClose: () => {
+        alert("Payment process closed.");
+
+         // Redirect to the home page
+         navigate("/donate");
+
+         // Clear input fields
+         setFirstName("")
+         setLastName("")
+         setEmail("")
+         setAmount("")
+         setNumber("")
+         setSelectedOption("")
+      },
+    });
+  };
 
   return (
     <section className="secTwo">
@@ -167,10 +207,11 @@ const Donation = () => {
               />
             </div>
 
-            <p>Select a method of payment:</p>
+            {/* <p>Select a method of payment:</p> */}
+            <p>Select the radio button to make payment:</p>
 
             <div className="paymentSelection">
-              <label>
+              {/* <label>
                 <input
                   type="radio"
                   value="optionPayStack"
@@ -178,7 +219,7 @@ const Donation = () => {
                   onChange={handleRadioChange}
                 />
                 PayStack
-              </label>
+              </label> */}
 
               <label>
                 <input
@@ -193,7 +234,7 @@ const Donation = () => {
 
             <div className="btnPaymentGroup">
               {/* button one  */}
-              <button
+              {/* <button
                 className="formBtn"
                 onClick={handlePayment}
                 type="submit"
@@ -212,7 +253,7 @@ const Donation = () => {
                 ) : (
                   "paystack"
                 )}
-              </button>
+              </button> */}
 
               {/* button two  */}
               <button
@@ -231,17 +272,19 @@ const Donation = () => {
                       : "not-allowed",
                 }}
                 disabled={selectedOption !== "optionFlutterWave"}
+
                 // onClick={handleFlutterPayment}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleFlutterPayment({
-                    callback: (response) => {
-                      console.log(response);
-                      // closePaymentModal(); // this will close the modal programmatically
-                    },
-                    onClose: () => {},
-                  });
-                }}
+                // onClick={(e) => {
+                //   e.preventDefault();
+                //   handleFlutterPayment({
+                //     callback: (response) => {
+                //       console.log(response);
+                //       // closePaymentModal(); // this will close the modal programmatically
+                //     },
+                //     onClose: () => {},
+                //   });
+                // }}
+                onClick={handleSubmit}
               >
                 {selectedOption === "optionFlutterWave" ? (
                   <img src={flutterwavelogo} alt="flutter" />
